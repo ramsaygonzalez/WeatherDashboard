@@ -109,7 +109,7 @@ $("#city-search").on("click", function (event) {
                 $("#daytwo-date").html("<h5>" + dayTwoDate);
                 $("#daytwo-date").append($("<img>").attr("src", "http://openweathermap.org/img/w/" + dayTwoIcon + ".png"));
                 $("#daytwo-temp").text(dayTwoTemp);
-                $("#daytwo-humid").text(dayTwoIcon);
+                $("#daytwo-humid").text(dayTwoHumid);
 
                 $("#daythree-date").html("<h5>" + dayThreeDate);
                 $("#daythree-date").append($("<img>").attr("src", "http://openweathermap.org/img/w/" + dayThreeIcon + ".png"));
@@ -119,7 +119,7 @@ $("#city-search").on("click", function (event) {
                 $("#dayfour-date").html("<h5>" + dayFourDate);
                 $("#dayfour-date").append($("<img>").attr("src", "http://openweathermap.org/img/w/" + dayFourIcon + ".png"));
                 $("#dayfour-temp").text(dayFourTemp);
-                $("#dayfour-temp").text(dayFourHumid);
+                $("#dayfour-humid").text(dayFourHumid);
 
                 $("#dayfive-date").html("<h5>" + dayFiveDate);
                 $("#dayfive-date").append($("<img>").attr("src", "http://openweathermap.org/img/w/" + dayFiveIcon + ".png"));
