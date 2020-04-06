@@ -40,7 +40,7 @@ $("#city-search").on("click", function (event) {
         method: "GET"
     }).then(function (currentWX) {
 
-        var city = currentWX.name + "(" + today + ")";
+        var city = currentWX.name + " (" + today + ") ";
         var temp = "Temperature: " + ((currentWX.main.temp - 273.15) * 1.80 + 32).toFixed(2) + " F";
         var humid = "Humidity: " + currentWX.main.humidity + " %";
         var wind = "Wind Speed: " + currentWX.wind.speed + " MPH";
@@ -48,6 +48,7 @@ $("#city-search").on("click", function (event) {
         var long = currentWX.coord.lon;
         var icon = currentWX.weather[0].icon;
         var iconURL = "http://openweathermap.org/img/w/" + icon + ".png"
+        var iconImage = $("<img>").attr("src", "http://openweathermap.org/img/w/" + icon + ".png")
 
         console.log(currentWX);
         console.log(city);
@@ -66,47 +67,12 @@ $("#city-search").on("click", function (event) {
         }).then(function (UVIndex) {
             var uvindex = "UV Index: " + UVIndex.value;
 
-            // Creating a div to hold current weather forcast
-            var todayDiv = $("<div class= 'today'>")
-
-            // Creating an element to have the city and date displayed
-            var pCity = $("<p>").text(city);
-
-            // Creating an element to hold the weather icon
-            var image = $("<img>").attr("src", iconURL);
-
-            // Displaying the forcast information
-            todayDiv.append(pCity);
-
-            // Adding the weather icon
-            todayDiv.append(image);
-
-            // creating an element to hold temperature
-            var pTemp = $("<p>").text(temp);
-
-            // adding the temperature
-            todayDiv.append(pTemp);
-
-            // Creating an element to hold humidity
-            var pHumid = $("<p>").text(humid);
-
-            // adding the humidity
-            todayDiv.append(pHumid);
-
-            // Creating an element to hold wind speed
-            var pWind = $("<p>").text(wind);
-
-            // adding wind speed
-            todayDiv.append(pWind);
-
-            // Creating an element to hold wind speed
-            var pUVIndex = $("<p>").text(uvindex);
-
-            // adding wind speed
-            todayDiv.append(pUVIndex);
-
-            // Putting the entire movie above the previous movies
-            $("#current-weather").append(todayDiv);
+            $("#current-city").html("<h5>" + city);
+            $("#current-city").append($("<img>").attr("src", "http://openweathermap.org/img/w/" + icon + ".png"));
+            $("#current-temp").text(temp);
+            $("#current-humid").text(humid);
+            $("#current-wind").text(wind);
+            $("#current-UVIndex").text(uvindex);
 
             console.log(uvindex);
 
