@@ -4,6 +4,13 @@ Unit 6 homework.  Server-side APIs.
 Application Goal:
 The goal with this application is to provide the user the ability to enter a city name into a search field and then generate several outputs providing weather information for the desired city after a button is clicked.  The user will also be provided a history of the cities that have been searched which can then be selected to initiate a new search for the city which has been clicked.  
 
+Technologies:
+    - HTML
+    - CSS
+    - JavaScript
+    - Jquery
+    - Third Party APIs
+
 Outputs:
 The application will provide the user with the following information:
     - Search history
