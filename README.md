@@ -43,4 +43,4 @@ Progress Notes:
     - need to code the ability to have page load with local storage items.
     - need to add the ability to click on local storage item to update api calls
 
-
+![site screenshot](https://github.com/ramsaygonzalez/WeatherDashboard/blob/master/WeatherDashboard.PNG?raw=true)
