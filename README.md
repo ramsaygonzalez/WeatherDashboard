@@ -28,12 +28,12 @@ To power this application data has been pulled from the www.openweathermap.org A
     -  UV Index by lat & lon - https://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}
 
 Progress Notes:
-- all the required elements have been created in HTML.  
-    - styling is still required.
+- all the required elements have been created in HTML. Utilized bootstrap for containers.  
+    - styling is still required for most HTML elements
 - js code required to make all ajax API calls complete.
 - js code to generate html elements from data pulled in API call is complete.
 - local storage working and list is generated for each search
     - need to code the ability to have page load with local storage items.
     - need to add the ability to click on local storage item to update api calls
 
-    
+
