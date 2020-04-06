@@ -49,42 +49,6 @@ $("#city-search").on("click", function (event) {
         var icon = currentWX.weather[0].icon;
         var iconURL = "http://openweathermap.org/img/w/" + icon + ".png"
 
-        // Creating a div to hold current weather forcast
-        var todayDiv = $("<div class= 'today'>")
-
-        // Creating an element to have the city and date displayed
-        var pCity = $("<p>").text(city);
-
-        // Creating an element to hold the weather icon
-        var image = $("<img>").attr("src", iconURL);
-
-        // Displaying the forcast information
-        todayDiv.append(pCity);
-
-        // Adding the weather icon
-        todayDiv.append(image);
-
-        // creating an element to hold temperature
-        var pTemp = $("<p>").text(temp);
-
-        // adding the temperature
-        todayDiv.append(pTemp);
-
-        // Creating an element to hold humidity
-        var pHumid = $("<p>").text(humid);
-
-        // adding the humidity
-        todayDiv.append(pHumid);
-
-        // Creating an element to hold wind speed
-        var pWind = $("<p>").text(wind);
-
-        // adding wind speed
-        todayDiv.append(pWind);
-
-        // Putting the entire movie above the previous movies
-        $("#current-weather").append(todayDiv);
-
         console.log(currentWX);
         console.log(city);
         console.log(temp);
@@ -101,6 +65,48 @@ $("#city-search").on("click", function (event) {
             method: "GET"
         }).then(function (UVIndex) {
             var uvindex = "UV Index: " + UVIndex.value;
+
+            // Creating a div to hold current weather forcast
+            var todayDiv = $("<div class= 'today'>")
+
+            // Creating an element to have the city and date displayed
+            var pCity = $("<p>").text(city);
+
+            // Creating an element to hold the weather icon
+            var image = $("<img>").attr("src", iconURL);
+
+            // Displaying the forcast information
+            todayDiv.append(pCity);
+
+            // Adding the weather icon
+            todayDiv.append(image);
+
+            // creating an element to hold temperature
+            var pTemp = $("<p>").text(temp);
+
+            // adding the temperature
+            todayDiv.append(pTemp);
+
+            // Creating an element to hold humidity
+            var pHumid = $("<p>").text(humid);
+
+            // adding the humidity
+            todayDiv.append(pHumid);
+
+            // Creating an element to hold wind speed
+            var pWind = $("<p>").text(wind);
+
+            // adding wind speed
+            todayDiv.append(pWind);
+
+            // Creating an element to hold wind speed
+            var pUVIndex = $("<p>").text(uvindex);
+
+            // adding wind speed
+            todayDiv.append(pUVIndex);
+
+            // Putting the entire movie above the previous movies
+            $("#current-weather").append(todayDiv);
 
             console.log(uvindex);
 
