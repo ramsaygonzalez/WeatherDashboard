@@ -8,6 +8,33 @@ $("#city-search").on("click", function (event) {
     var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + requestedCity + "&cnt=" + "&appid=" + APIKey
     var today = new Date();
 
+    var searchInput = document.querySelector("#city-input");
+    var searchButton = document.querySelector("#city-search");
+    var searchList = document.querySelector("#city-list");
+
+    var searchHistory = [];
+
+    var historyText = searchInput.value.trim();
+
+    if (historyText === "") {
+        return;
+    }
+    searchHistory.push(historyText);
+    searchInput.value = "";
+
+    localStorage.setItem("history", JSON.stringify(searchHistory))
+
+    for (var i = 0; i < searchHistory.length; i++) {
+
+        var list = searchHistory[i];
+
+        var li = document.createElement("li");
+        li.textContent = list;
+        li.setAttribute("data-index", i);
+        searchList.appendChild(li);
+    }
+
+
     $.ajax({
         url: currentWXURL,
         method: "GET"
